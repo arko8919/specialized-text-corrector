@@ -1,0 +1,23 @@
+@use '../helpers' as *;
+
+.underline {
+  border-bottom: 0.15rem solid $highlight;
+  border-radius: 0.5rem;
+  bottom: 0.1rem;
+  left: 0;
+  margin-left: 1.665%;
+  position: relative;
+  transition: all 0.5s;
+  width: 30%;
+}
+
+// Moves underline based on the chosen menu option
+.underline-text {
+  left: 0;
+}
+.underline-words {
+  left: 33.33%;
+}
+.underline-faq {
+  left: 66.66%;
+}

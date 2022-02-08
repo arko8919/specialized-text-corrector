@@ -1,0 +1,38 @@
+@use '../helpers' as *;
+
+// List of predefined overused words
+.predefined-list {
+    display: flex;
+    flex-flow: column nowrap;
+
+    p {
+        font-size: 1.2rem;
+        font-style: italic;
+    }
+
+    ul {
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        li {
+            align-items: center;
+            display: flex;
+            flex-flow: row-reverse nowrap;
+            justify-content: flex-end;
+            min-width: 11rem;
+            padding: 1rem;
+        }
+    }
+
+    // Changes to custom button normmaly defined by .btn class
+    button {
+        background-color: unset;
+        color: $btn-background;
+        font-size: 1.3rem; // This have impact on size of "material icons"
+        margin-right: 0.7rem;
+        padding: 0;
+        &:hover {
+            color: $highlight;
+        }
+    }
+}

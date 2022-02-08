@@ -1,0 +1,79 @@
+@use 'variables' as *;
+@use 'functions' as *;
+
+// Centering horizontally and vertically positioned elements 
+@mixin center($horizontal: true, $vertical: true, $transform) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: $transform;
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: $transform;
+  } @else if ($vertical) {
+    top: 50%;
+    transform: $transform;
+  }
+}
+
+// Media queries for min-width of used device
+@mixin respond-to($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(type-of($raw-query) == 'string', unquote($raw-query), inspect($raw-query));
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No value found for `#{$breakpoint}`. '
+    + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
+
+// Responsive font size
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+  // If all units are the same type( px == px  )
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(
+          #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+// Add prefixes to property
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+// Add social media icons into multiple list items
+@mixin addSocialIcons($num, $url) {
+  &:nth-child(#{$num}) {
+    background-image: url($url);
+  }
+}
+
+//  Mixin to give dimensions to a box
+@mixin box($width, $height: $width) {
+  height: $height;
+  width: $width;
+}

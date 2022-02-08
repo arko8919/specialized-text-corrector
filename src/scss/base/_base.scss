@@ -1,0 +1,75 @@
+@use '../helpers' as *;
+
+// General Styles
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+
+  // Responsive font size
+  @include fluid-type($min-width, $max-width, $min-font, $max-font);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: $background;
+  color: $text;
+  // Allows the page to stretch to the full height of the viewport
+  display: flex;
+  flex-flow: column nowrap;
+  font-family: $default-font-family;
+  height: 100vh; // To make sure that content stretches the full height of viewport when used with display: flex on the body elment
+  margin: 0;
+  padding: 0;
+  h1 {
+    // Responsive font for headers
+    font-size: $mod-1 * $mod-1 * $mod-1 * $mod-1 * 1rem;
+    @include fluid-type(
+      $min-width,
+      $max-width,
+      $mod-1 * $mod-1 * $mod-1 * $min-font,
+      $mod-2 * $mod-2 * $mod-2 * $min-font
+    );
+  }
+
+  h2 {
+    // Responsive font for headers
+    font-size: $mod-1 * $mod-1 * $mod-1 * 1rem;
+    @include fluid-type(
+      $min-width,
+      $max-width,
+      $mod-1 * $mod-1 * $mod-1 * $min-font,
+      $mod-2 * $mod-2 * $mod-2 * $min-font
+    );
+  }
+
+  h3 {
+    // Responsive font for headers
+    font-size: $mod-1 * $mod-1 * 1rem;
+    @include fluid-type($min-width, $max-width, $mod-1 * $mod-1 * $min-font, $mod-2 * $mod-2 * $min-font);
+  }
+}
+
+h1,
+h2,
+h3,
+p {
+  text-align: center;
+}
+
+// Reset lists
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header,
+footer {
+  background: center / cover no-repeat url(assets/background.png);
+}

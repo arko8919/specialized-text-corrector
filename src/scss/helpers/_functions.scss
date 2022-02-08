@@ -1,0 +1,7 @@
+@use 'variables' as *;
+@use 'sass:math';
+
+// Function used inside fluid-type mixin which removes unit from number
+@function strip-unit($value) {
+  @return math.div($value, $value * 0 + 1);
+}

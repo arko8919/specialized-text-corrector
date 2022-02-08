@@ -1,0 +1,20 @@
+@use '../helpers' as *;
+button {
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0;
+    outline: none;
+    padding: 0;
+}
+
+.btn {
+    background-color: $btn-background;
+    border-radius: 0.3rem;
+    color: $btn-text;
+    padding: 0.5rem;
+    transition: all 0.2s;
+    &:hover {
+        color: $highlight;
+    }
+}

@@ -1,0 +1,53 @@
+@use '../helpers' as *;
+
+// The text input section includes 3 layers on top of each other: text-area, highlighted overused words, and highlighted repeated words
+.text-input {
+  left: 0;
+  // Any repeated or overused words will be highlighted if selected
+  #text-area,
+  #highlighted-repeated-words,
+  #highlighted-overused-words {
+    font-family: $mono-font-family; // We use more readable for text entered by a user
+    height: 100%;
+    left: 0;
+    margin: 0;
+    overflow-wrap: break-word; // Prevents overflow of text by breaking words
+    padding: 0.4rem;
+    position: absolute;
+    top: 0;
+    // We use it to make sure that all elements, respect white space behavior and the way the user enters text.
+    // Text may end up in different places based on which element was used and different default styles it applies.
+    // In this case, we use the same HTML elements for each layer, but to make sure that any changes to that elements won't change the behavior of text we still apply this style
+    white-space: pre-wrap;
+    width: 100%;
+  }
+
+  // The first layer is what the user typing in
+  #text-area {
+    background-color: transparent;
+    outline: none;
+    resize: none;
+    z-index: 1; // Position text area on top of repeated and overused words layer
+  }
+
+  // The second layer is a text, which the user entered in, but the repeated word may have been highlighted as the user selected it from the repeated words list
+  #highlighted-repeated-words {
+    background-color: $background;
+    color: transparent;
+    z-index: -2; // Position repeated words layer behind overused words layer
+    mark {
+      background-color: $repeated-word;
+      color: transparent;
+    }
+  }
+
+  // The third layer is a text, which the user entered in, but some words could get highlighted when the user checked them in the overused words list
+  #highlighted-overused-words {
+    color: transparent;
+    z-index: -1; // Position the overused words layer behind the text area layer and above the repeating words layer
+    mark {
+      background-color: $overused-word;
+      color: transparent;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use '../helpers' as *;
+
+.string-data {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  border: {
+    bottom: 0.15rem solid $border;
+    top: 0.015rem solid $border;
+  }
+}

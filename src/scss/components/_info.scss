@@ -1,0 +1,17 @@
+@use "../helpers" as *;
+
+// FAQ
+.info {
+  left: 200%;
+  padding: 0 2rem;
+
+  dt {
+    font-weight: bold;
+    padding: 1rem;
+  }
+
+  ol {
+    list-style-type: upper-roman;
+    padding: 0.3rem;
+  }
+}

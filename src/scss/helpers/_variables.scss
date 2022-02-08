@@ -1,0 +1,45 @@
+// Basic colors
+$background: #f6f6f6;
+$text: rgba(14, 16, 26, 0.7);
+$btn-background: #15c39a;
+$border: #15c39a;
+$btn-text: #f6f6f6;
+$highlight: #e2534f;
+$overused-word: #18f8fa;
+$repeated-word: #d78838;
+
+/* Font Size */
+$default-font-size: 10px;
+/* Font Family */
+$default-font-family: "Indie Flower", cursive;
+$mono-font-family: "Roboto Mono", monospace;
+
+// Fonts
+$min-width: 320px;
+$max-width: 1700px;
+$min-font: 10px;
+$max-font: 24px;
+$mod-1: 1.2; // Mobile
+$mod-2: 1.5; // Desktop
+
+// Breakpoints map used with mixin respond-to($breakpoints)
+$breakpoints: (
+    "very-small": (
+        min-width: 481px,
+    ),
+    "small": (
+        min-width: 769px,
+    ),
+    "medium": (
+        min-width: 806px,
+    ),
+    "large": (
+        min-width: 1024px,
+    ),
+    "very-large": (
+        min-width: 1366px,
+    ),
+    "huge": (
+        min-width: 1700px,
+    ),
+);

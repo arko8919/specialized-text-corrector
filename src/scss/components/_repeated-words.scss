@@ -1,0 +1,19 @@
+@use '../helpers' as *;
+
+.repeated-words {
+  border-bottom: 0.15rem solid $border;
+  @include respond-to('very-large') {
+    border: 0.15rem solid $border;
+    border-left: none;
+  }
+
+  li {
+    margin: 0 auto;
+    max-width: 80%;
+    white-space: nowrap;
+  }
+
+  .active {
+    box-shadow: -0.1rem -0.1rem 0.2rem 0 $highlight inset, 0.1rem 0.1rem 0.2rem 0 $highlight inset;
+  }
+}

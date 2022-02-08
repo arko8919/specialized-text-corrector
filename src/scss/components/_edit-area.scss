@@ -1,0 +1,10 @@
+@use '../helpers' as *;
+
+.edit-area {
+  display: flex;
+  flex-flow: column nowrap;
+  overflow: hidden; // Hide content overflowing from not active menu sections ( textarea, add words, faq )
+  @include respond-to('very-large') {
+    max-height: 65vh;
+  }
+}

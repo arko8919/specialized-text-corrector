@@ -1,0 +1,32 @@
+@use '../helpers' as *;
+
+.repeated-words,
+.overused-words {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  @include respond-to('very-large') {
+    max-height: 65vh;
+  }
+
+  ul {
+    font-family: $mono-font-family;
+    overflow-y: auto;
+  }
+
+  li {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 2rem;
+    justify-content: center;
+    margin: 0.2rem 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+}

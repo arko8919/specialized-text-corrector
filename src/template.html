@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Specialized Text Corrector</title>
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="//cdn.materialdesignicons.com/2.1.19/css/materialdesignicons.min.css" media="all" rel="stylesheet"
+        type="text/css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,700" rel="stylesheet">
+</head>
+
+<body>
+    <header role="banner">
+        <h1>Specialized Text Corrector</h1>
+        <p>Easy to use, a simple mini editor for finding repeated and overused words in a text.
+
+            Often when we write to someone or to an audience our text is filled with the same words or words which are
+            overused. The most common examples are CVs and Emails.
+
+            Here is a tool with one purpose, to find these words.</p>
+    </header>
+    <main role="main">
+        <section class="edit-area">
+            <nav>
+                <button class="menu-btn btn active" value="textarea">Text area</button>
+                <button class="menu-btn btn" value="words">Words</button>
+                <button class="menu-btn btn" value="faq">FAQ</button>
+            </nav>
+            <div class="underline"></div>
+            <div class="edit-area-sections">
+                <section class="text-input">
+                    <div contenteditable="true" id="text-area"></div>
+                    <div id="highlighted-repeated-words"></div>
+                    <div id="highlighted-overused-words"></div>
+                </section>
+                <section class="words-input">
+                    <form class="add-words">
+                        <label for="input">Enter word/words:</label>
+                        <input id="input" type="text" title="input" />
+                        <button type="button" id="add" class="btn">Add Words</button>
+                    </form>
+                    <div class="predefined-list">
+                        <h2>Overused Words</h2>
+                        <p>Common</p>
+                        <ul class="common-overused-words">
+                        </ul>
+
+                        <p>On the curriculum vitae</p>
+                        <ul class="cv-overused-words">
+                        </ul>
+                    </div>
+                </section>
+                <section class="info">
+                    <h2>Frequently Asked Questions</h2>
+                    <dl>
+                        <dt>How to add custom overused word/words to the list?</dt>
+                        <dd>
+                            <ol>
+                                <li>Go to 'Words' section.</li>
+                                <li>In box, type word/words of your choosing, using comma or whitespace as
+                                    separator.
+                                </li>
+                                <li>Click on 'ADD WORDS' button.</li>
+                                <li>You can find custom word/words can be found now on overused words list.</li>
+                            </ol>
+                        </dd>
+
+                        <dt>How to add predefined overused words?</dt>
+                        <dd>
+                            <ol>
+                                <li>In the "Words" section, under the area for entering custom overused words you can
+                                    find predefined words.</li>
+                                <li>To add word to the overused words list click on '+' button.</li>
+                            </ol>
+                        </dd>
+
+                        <dt>How to highlight overused and repeated words?</dt>
+                        <dd>On the list of repeated or overused words, click on the word. The selection will be
+                            visible on the list and in the text area.</dd>
+
+                        <dt>How to delete overused words?</dt>
+                        <dd>Each custom or predefined overused word have a <span> - </span> icon on
+                            right side of the overused word list. Click on it, to delete a word.</dd>
+                    </dl>
+                </section>
+            </div>
+            <div class="string-data">
+                <p>Words: <span>0</span></p>
+                <p>Sentences: <span>0</span></p>
+                <p>Characters: <span>0</span></p>
+            </div>
+        </section>
+        <section class="repeated-words">
+            <h2>Repeated Words</h2>
+            <ul class="repeated-words-list">
+            </ul>
+        </section>
+        <section class="overused-words">
+            <h2>Overused Words</h2>
+            <ul class="overused-words-list">
+            </ul>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="social-media">
+            <a href="https://www.linkedin.com/in/artur-sas-dunajewski/" title="Connect with me on Linkedin"
+                target="_blank">Linkedin</a>
+            <a href="https://github.com/arko8919" title="Connect with me on Github" target="_blank">Github</a>
+            <a href="https://www.facebook.com/artur.sasdunajewski" title="Connect with me on Facebook"
+                target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/arko8919/" title="Connect with me on Instagram"
+                target="_blank">Instagram</a>
+        </div>
+        <p>Artur S-D @2021</p>
+    </footer>
+
+    <noscript>
+        You need to enable JavaScript to run this app.
+    </noscript>
+</body>
+
+</html>

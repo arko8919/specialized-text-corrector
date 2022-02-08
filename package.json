@@ -1,0 +1,41 @@
+{
+  "name": "overused-words-linter",
+  "version": "1.0.0",
+  "description": "Editor of overused and too frequently repeated words.",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.dev.js --open",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "keywords": [
+    "repeated",
+    "overused"
+  ],
+  "author": "Artur Sas Dunajewski",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.5.1",
+    "html-loader": "^3.0.1",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "node-sass": "^6.0.1",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "postcss": "^8.4.6",
+    "postcss-cli": "^9.1.0",
+    "postcss-sorting": "^7.0.1",
+    "sass": "^1.44.0",
+    "sass-loader": "^12.3.0",
+    "server": "^1.0.36",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev": "^1.1.1",
+    "webpack-dev-server": "^4.6.0",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "postcss-scss": "^4.0.3"
+  }
+}

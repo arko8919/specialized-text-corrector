@@ -1,0 +1,25 @@
+@charset 'utf-8'; // In css single quotes are not allowed but in Sass they acceptable
+
+// Base
+@use 'scss/base/normalize';
+@use 'scss/base/base';
+
+// Layout
+@use 'scss/layout/header';
+@use 'scss/layout/main';
+@use 'scss/layout/footer';
+
+// Components
+@use 'scss/components/button';
+@use 'scss/components/words-input';
+@use 'scss/components/text-input';
+@use 'scss/components/info';
+@use 'scss/components/edit-area';
+@use 'scss/components/string-data';
+@use 'scss/components/words-lists';
+@use 'scss/components/repeated-words';
+@use 'scss/components/overused-words';
+@use 'scss/components/edit-area-nav';
+@use 'scss/components/underline';
+@use 'scss/components/edit-area-sections';
+@use 'scss/components/predefined-list';
