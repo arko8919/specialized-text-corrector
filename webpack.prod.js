@@ -25,7 +25,7 @@ module.exports = merge(common, {
                     collapseWhitespace: true,
                     removeComments: true
                 },
-                //favicon: "./src/assets/images/logo/favicon.png"
+                favicon: "./src/assets/favicon-256x256.png"
             }),
         ]
     },
