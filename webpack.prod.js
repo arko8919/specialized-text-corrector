@@ -20,12 +20,13 @@ module.exports = merge(common, {
             new TerserPlugin(),
             new HtmlWebpackPlugin({
                 template: "./src/template.html",
+                favicon: "./src/assets/favicon-256x256.png",
                 minify: {
                     removeAttributeQuotes: true,
                     collapseWhitespace: true,
                     removeComments: true
                 },
-                favicon: "./src/assets/favicon-256x256.png"
+              
             }),
         ]
     },
