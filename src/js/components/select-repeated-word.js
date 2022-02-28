@@ -4,10 +4,10 @@ import { highlightSelectedRepeatedWord } from './highlight-selected-repeated-wor
 
 export function selectRepeatedWord(target, repeatedWord, repeatedWordsListItems, highlightedRepeatedWordsRef, textAreaValue) {
     // If a repeated word is inactive and was clicked, change state to active
-    if (target.className !== 'active-repeated-word') {
+    if (target.className !== 'active') {
         // Highlight repeated word in text area
         highlightedRepeatedWordsRef.innerHTML = highlightSelectedRepeatedWord(repeatedWord, textAreaValue);
-        // Set word to active
+        // Set word to active in the repeated words list
         highlightRepeatedWordListItem(repeatedWordsListItems, repeatedWord);
         // Set state of clicked word
         return {
@@ -16,8 +16,8 @@ export function selectRepeatedWord(target, repeatedWord, repeatedWordsListItems,
         };
 
     } else {
-        // Set word to inactive
-        target.className = 'inactive-repeated-word';
+        target.className = '';
+        // Set word to inactive in the repeated words list
         highlightedRepeatedWordsRef.innerHTML = textAreaValue;
         // Set state of clicked word
         return {

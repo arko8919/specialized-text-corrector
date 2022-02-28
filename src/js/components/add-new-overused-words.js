@@ -1,6 +1,6 @@
 import { removeOverusedWord } from './remove-overused-word';
 import { updateCheckedWords } from './update-checked-words';
-import { convertToText } from '../components/convert-to-text';
+import { convertToText } from './convert-to-text';
 
 const overusedWordsListRef = document.querySelector('.overused-words-list');
 const highlightedOverusedWordsRef = document.querySelector('#highlighted-overused-words');
@@ -22,9 +22,11 @@ export function addNewOverusedWords(overusedWords, checkedWords) {
         const spanElement = document.createElement('span'); // Custom checkbox
         const spanRemoveElement = document.createElement('span'); // Remove Word
 
-        // Add event listener to each word selected/added by the user with the option to remove the word from the list
+        // Add event listener to each word added from the suggested list or custom addition by the user with the option to remove the word from the list
         spanRemoveElement.addEventListener('click', event => {
-            textInput = convertToText(textAreaRef.innerHTML);
+            // We use 'contenteditable' attribute on non-form control in this case 'div', which provides an API for capturing HTML/"rich" content
+            // To work with user input that has not been rendered as if it were plain text content, we need to convert it to plain text
+            textInput = convertToText(textAreaRef.innerHTML); // Convert to plain text
             removeOverusedWord(overusedWords, checkedWords, highlightedOverusedWordsRef, event.target, textInput);
             event.preventDefault();
         });
@@ -39,7 +41,7 @@ export function addNewOverusedWords(overusedWords, checkedWords) {
         const labelTextNode = document.createTextNode(word);
         // Append text nodes
         listItem.appendChild(labelTextNode);
-        // Append input checkbox, custom checkbox, icon into label container
+        // Append input checkbox, custom checkbox, span element which removes overused word from the list
         listItem.appendChild(inputElement);
         listItem.appendChild(spanElement);
         listItem.appendChild(spanRemoveElement);
@@ -50,7 +52,7 @@ export function addNewOverusedWords(overusedWords, checkedWords) {
         spanRemoveElement.setAttribute('class', 'remove');
         spanElement.setAttribute('class', 'check-mark');
 
-        // The list is reconstructed that is why we need to recheck words that were checked already
+        // The list is reconstructed, that is why we need to recheck words, that were checked already
         if (checkedWords.includes(word)) {
             inputElement.setAttribute('checked', '');
         }

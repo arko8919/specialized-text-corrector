@@ -2,11 +2,10 @@ import { highlightCheckedOverusedWords } from './highlight-checked-overused-word
 
 export function updateCheckedWords(checkedWords, highlightedOverusedWordsRef, target, textAreaValue) {
     if (target.checked) {
-        // Get label element content
-        // If the user check an overused word add it to the checked words list
+        // If the user mark an overused word, add it to the 'checkedWords' array
         checkedWords.push(target.parentElement.id);
     } else {
-        // Delete checked word from the  if the user decided to uncheck
+        // Delete checked word from the 'checkedWords' array if the user decided to unmark
         for (let i = checkedWords.length - 1; i >= 0; i--) {
             if (checkedWords[i] === target.parentElement.id) {
                 checkedWords.splice(i, 1);
@@ -15,7 +14,7 @@ export function updateCheckedWords(checkedWords, highlightedOverusedWordsRef, ta
         }
     }
 
-    // Text area has 3 layers, text-area which is input from user, div for overused words, and div for repeated words
+    // Text area has 3 layers, first is div with 'contenteditable' attribute, in which user enter input, div for highlighting overused words , and div for highlighting repeated words
     // Update the words highlighting in overused words layer 
     highlightedOverusedWordsRef.innerHTML = highlightCheckedOverusedWords(checkedWords, textAreaValue);
 };

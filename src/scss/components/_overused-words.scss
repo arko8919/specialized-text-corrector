@@ -1,14 +1,13 @@
 @use '../helpers' as *;
 
 .overused-words {
-
+  border-bottom: 0.015rem solid $border;
+  border-top: 0.015rem solid $border;
+  border-bottom-left-radius: 0.7rem;
+  border-top-left-radius: 0.7rem;
   @include respond-to('very-large') {
-    border: 0.15rem solid $border;
-    border-right: none;
-  }
-  border: {
-    bottom: 0.15rem solid $border;
-    left: 0.015rem solid $border;
+    border: none;
+    border-radius: 0;
   }
 
   // Custom checkbox

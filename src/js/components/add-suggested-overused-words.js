@@ -1,8 +1,8 @@
 import { addNewOverusedWords } from './add-new-overused-words';
 
 // Creates new elements and add them to the DOM 
-// The first parameter is "CV" or "Common" suggested overused words list
-// The second parameter is a reference to that list in DOM
+// The third parameter is "CV" or "Common" suggested overused words list
+// The fourth parameter is a reference to that list in DOM
 export function addSuggestedOverusedWords(overusedWords, checkedWords, suggestedWords, wordsListRef) {
     suggestedWords.forEach(word => {
         // Create elements

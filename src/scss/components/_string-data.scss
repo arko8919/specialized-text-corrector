@@ -5,8 +5,9 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
-  border: {
-    bottom: 0.15rem solid $border;
-    top: 0.015rem solid $border;
+  border-top: 0.015rem solid $border;
+
+  @include respond-to('very-large') {
+    border-bottom: 0.015rem solid $border;
   }
 }

@@ -6,6 +6,10 @@ main {
     flex: 1; // Take all available space left
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr 15rem;
+    @include respond-to('very-large') {
+        grid-gap: 20px;
+        gap: 20px;
+    }
 
     .edit-area {
         grid-column: 1 / 5;

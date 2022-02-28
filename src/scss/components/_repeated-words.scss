@@ -1,10 +1,14 @@
 @use '../helpers' as *;
 
 .repeated-words {
-  border-bottom: 0.15rem solid $border;
+  border-bottom: 0.015rem solid $border;
+  border-top: 0.015rem solid $border;
+  border-bottom-right-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
+
   @include respond-to('very-large') {
-    border: 0.15rem solid $border;
-    border-left: none;
+    border-radius: 0;
+    border: none;
   }
 
   li {

@@ -1,6 +1,6 @@
 export function countRepeatedWords(words) {
     const countedWords = {};
-    // Save each unique word into an object and count how many times each word repeat
+    // Save each unique word into an object and add value which is the number of times each word repeated
     words.forEach(word => countedWords[word] = (countedWords[word] || 0) + 1);
 
     const sortedWords = [];

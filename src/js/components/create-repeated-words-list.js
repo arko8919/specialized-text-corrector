@@ -18,19 +18,19 @@ export function createRepeatedWordsList(repeatedWords, textAreaWords, textAreaVa
         repeatedWordsListRef.removeChild(repeatedWordsListRef.firstChild);
     }
 
-    // Reset value of [ currentWord ] property, if the same word stored in [ currentWord ] property is removed from the text area
+    // If 'currentWord' property value ( selected word ) is highlighted in text-area and then the user removes it from text-area, reset the value of 'currentWord' property
     if (!textAreaWords.includes(state.currentWord)) {
         state.currentWord = '';
     }
 
-    // RepeatedWords array store arrays = [ word, count ]
+    // 'repeatedWords' array store data in this format: [[ word1, count1 ], [ word2, count2 ], [...]]
     repeatedWords.forEach(repeatedWord => {
         // Create element 
         const createdListItemElement = document.createElement('li');
         // Highlight repeated word in textarea and in repeated words list
         createdListItemElement.addEventListener('click', event => {
             const newState = selectRepeatedWord(event.target, repeatedWord[0], repeatedWordsListItemsRef, highlightedRepeatedWordsRef, textAreaValue);
-            // update state
+            // Update state
             state.highlighted = newState.highlighted;
             state.currentWord = newState.currentWord;
             event.preventDefault();
