@@ -9,12 +9,16 @@ export function updateCheckedWords(checkedWords, highlightedOverusedWordsRef, ta
         for (let i = checkedWords.length - 1; i >= 0; i--) {
             if (checkedWords[i] === target.parentElement.id) {
                 checkedWords.splice(i, 1);
+                // The overused words in the list are never repeated, so stop looking any further
                 break;
             }
         }
     }
 
-    // Text area has 3 layers, first is div with 'contenteditable' attribute, in which user enter input, div for highlighting overused words , and div for highlighting repeated words
+    // Text area has 3 layers:
+    // 1: div element with 'contenteditable' attribute in which user enter input
+    // 2: div element for highlighting overused words, 
+    // 3: div element for highlighting repeated words
     // Update the words highlighting in overused words layer 
     highlightedOverusedWordsRef.innerHTML = highlightCheckedOverusedWords(checkedWords, textAreaValue);
 };

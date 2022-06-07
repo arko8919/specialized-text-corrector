@@ -1,4 +1,4 @@
-// Match all words which are marked by the user and highlight them
+// Match all words which are selected by the user and highlight them
 export function highlightCheckedOverusedWords(checkedWords, textAreaValue) {
     for (let index = 0; index < checkedWords.length; index++) {
         // Create a regular expression which change with each iteration

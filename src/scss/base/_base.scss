@@ -25,6 +25,7 @@ body {
   height: 100vh; // To make sure that content stretches the full height of viewport when used with display: flex on the body elment
   margin: 0;
   padding: 0;
+
   h1 {
     // Responsive font for headers
     font-size: $mod-1 * $mod-1 * $mod-1 * $mod-1 * 1rem;
@@ -50,7 +51,12 @@ body {
   h3 {
     // Responsive font for headers
     font-size: $mod-1 * $mod-1 * 1rem;
-    @include fluid-type($min-width, $max-width, $mod-1 * $mod-1 * $min-font, $mod-2 * $mod-2 * $min-font);
+    @include fluid-type(
+      $min-width, 
+      $max-width, 
+      $mod-1 * $mod-1 * $min-font,
+      $mod-2 * $mod-2 * $min-font
+    );
   }
 }
 

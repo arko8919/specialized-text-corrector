@@ -1,7 +1,7 @@
 {
-  "name": "overused-words-linter",
+  "name": "specialized-editor",
   "version": "1.0.0",
-  "description": "Editor of overused and too frequently repeated words.",
+  "description": "Specialized editor of overused and too frequently repeated words.",
   "private": true,
   "main": "src/index.js",
   "scripts": {
@@ -9,8 +9,14 @@
     "build": "webpack --config webpack.prod.js"
   },
   "keywords": [
+    "specialized",
+    "editor",
     "repeated",
-    "overused"
+    "overused",
+    "words",
+    "linter",
+    "text",
+    "editor"
   ],
   "author": "Artur Sas Dunajewski",
   "license": "ISC",

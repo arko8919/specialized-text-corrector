@@ -1,7 +1,7 @@
 @use 'variables' as *;
 @use 'functions' as *;
 
-// Centering horizontally and vertically positioned elements 
+// Centering horizontally and vertically positioned elements
 @mixin center($horizontal: true, $vertical: true, $transform) {
   position: absolute;
   @if ($horizontal and $vertical) {

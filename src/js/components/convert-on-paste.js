@@ -40,7 +40,7 @@ export const convertOnPaste = (
     // Clean up text.
     value = convertToText(value);
 
-    // Insert text.
+    // Insert text. Deprecated. Need to be updated
     if (typeof document.execCommand === f) {
         document.execCommand('insertText', false, value);
     }

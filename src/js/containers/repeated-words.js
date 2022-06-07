@@ -19,10 +19,7 @@ export function repeatedWords(checkedWords) {
 
     textAreaRef.addEventListener('input', event => {
         // You would call this after getting an element's `.innerHTML` value, while the user is typing.
-     
-        console.log(textAreaRef.innerHTML);
         textInput = convertToText(textAreaRef.innerHTML);
-        console.log(textInput);
 
         // Return array of words from input text area
         const textAreaWords = splitTextIntoWords(/\W+/, textInput);
@@ -35,7 +32,7 @@ export function repeatedWords(checkedWords) {
 
         // Highlight already selected overused words
         highlightedOverusedWordsRef.innerHTML = highlightCheckedOverusedWords(checkedWords, textInput);
-    
+
         // Displays the number of characters, words and sentences in the text sequence
         getStringData(textInput);
 

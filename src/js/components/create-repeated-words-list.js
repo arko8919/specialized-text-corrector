@@ -27,7 +27,7 @@ export function createRepeatedWordsList(repeatedWords, textAreaWords, textAreaVa
     repeatedWords.forEach(repeatedWord => {
         // Create element 
         const createdListItemElement = document.createElement('li');
-        // Highlight repeated word in textarea and in repeated words list
+        // When a word is selected, highlight repeated word in textarea and in repeated words list
         createdListItemElement.addEventListener('click', event => {
             const newState = selectRepeatedWord(event.target, repeatedWord[0], repeatedWordsListItemsRef, highlightedRepeatedWordsRef, textAreaValue);
             // Update state

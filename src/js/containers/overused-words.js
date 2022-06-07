@@ -6,12 +6,12 @@ const cvOverusedWordsListRef = document.querySelector('.cv-overused-words');
 const commonOverusedWordsListRef = document.querySelector('.common-overused-words');
 
 
-// List of words ( maybe give it a seperate module ??? Call this module in different modules when you need to update or retrieve data ???)
+// List of words { maybe give it a seperate module ??? Call this module in different modules when you need to update or retrieve data ??? }
 const state = {
-    overusedWords: [], // All overused words suggested and custom
-    checkedWords: [], // Words that are marked by the user in overused words list
-    cvOverusedWords: ['passionate', 'creative', 'driven', 'responsible', 'strategic', 'organizational', 'expert'], // This are suggested oversued words for CV
-    commonOverusedWords: ['other', 'more', 'new', 'good', 'best', 'many', 'important', 'great', 'first', 'able'] // This are common suggested oversued words
+    overusedWords: [], // List of all overused suggested and custom words
+    checkedWords: [], // Words that are marked & selected by the user in overused words list
+    cvOverusedWords: ['passionate', 'creative', 'driven', 'responsible', 'strategic', 'organizational', 'expert'], // These are suggested overused words for CV
+    commonOverusedWords: ['other', 'more', 'new', 'good', 'best', 'many', 'important', 'great', 'first', 'able'] // These are common suggested overused words  
 };
 
 export function overusedWords() {

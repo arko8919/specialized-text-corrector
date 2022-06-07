@@ -17,7 +17,7 @@ export function addNewOverusedWords(overusedWords, checkedWords) {
 
     overusedWords.forEach(word => {
         // Create elments
-        const listItem = document.createElement('li'); // Container
+        const listItem = document.createElement('li'); // List item
         const inputElement = document.createElement('input');  // Input checkbox
         const spanElement = document.createElement('span'); // Custom checkbox
         const spanRemoveElement = document.createElement('span'); // Remove Word
@@ -52,7 +52,7 @@ export function addNewOverusedWords(overusedWords, checkedWords) {
         spanRemoveElement.setAttribute('class', 'remove');
         spanElement.setAttribute('class', 'check-mark');
 
-        // The list is reconstructed, that is why we need to recheck words, that were checked already
+        // The list elment is reconstructed, that is why we need to recheck words, that were checked already
         if (checkedWords.includes(word)) {
             inputElement.setAttribute('checked', '');
         }
