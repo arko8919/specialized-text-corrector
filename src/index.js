@@ -2,20 +2,19 @@
 import './style.scss';
 
 // Scripts
-import { editorNav } from './js/layout/editor-nav';
-import { repeatedWords } from './js/containers/repeated-words';
-import { overusedWords } from './js/containers/overused-words';
+import { editorNav } from './js/ui/editor-nav';
+import { manageRepeatedWords } from './js/repeated-words/manage-repeated-words';
+import { manageSuggestedWords } from './js/overused-words/manage-suggested-words';
+import { manageOverusedWords } from './js/overused-words/manage-overused-words';
 
-// Editor navigation menu Reference
-const menuBtnRef = document.querySelectorAll('.menu-btn');
+// Reference the parent container
+const menuContainer = document.querySelector('.menu-container');
 
-// Change sections on menu button click ( sections >>> textarea, add words, faq )
-Array.from(menuBtnRef, button => button.addEventListener('click', event => {
-    editorNav(event, menuBtnRef);
-}));
+// Check if container exists before adding event listener
+if (menuContainer) {
+    menuContainer.addEventListener('click', editorNav);
+}
 
-// Containing all functionality responsible for overused words 
-// Return list of marked overused words by user
-const checkedWords = overusedWords();
-// Containing all functionality responsible for repeated words
-repeatedWords(checkedWords);
+manageSuggestedWords();
+manageOverusedWords();
+manageRepeatedWords();

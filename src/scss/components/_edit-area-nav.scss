@@ -1,16 +1,18 @@
 @use '../helpers' as *;
 
-nav {
+.menu-container {
   display: flex;
   flex-flow: row nowrap;
   text-align: center;
   user-select: none;
 
   // Menu buttons have different styling to other buttons on the page
+
   .menu-btn {
     background-color: $background;
     color: $text;
     width: 33.33%;
+
     border: {
       bottom: 0.015rem solid $border;
       top: 0.015rem solid $border;
@@ -22,12 +24,14 @@ nav {
       border-bottom-left-radius: 0;
       border-top-left-radius: 0;
     }
+
     // Third button in menu
     &:nth-child(3) {
       border-bottom-right-radius: 0;
       border-top-right-radius: 0;
     }
   }
+
 
   // An active menu item will have distinct styling than inactive items
   .active {

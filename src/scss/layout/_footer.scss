@@ -2,16 +2,18 @@
 
 footer {
     padding-top: 1rem;
+
     .social-media {
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
+
         a {
             padding: 0.4rem;
             transition: 0.3s all ease-out;
 
             &:visited {
-                color: LinkText;
+                //     color: LinkText;
             }
 
             &:hover {

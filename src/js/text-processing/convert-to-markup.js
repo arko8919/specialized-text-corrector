@@ -7,7 +7,7 @@ import { convertToText } from './convert-to-text';
   text into the `contenteditable` area on a page.
 */
 export const convertToMarkup = (str = '') => {
-  return convertToText(str).replace(/\n/g, '<br>');
+    return convertToText(str).replace(/\n/g, '<br>');
 };
 
 // Export.

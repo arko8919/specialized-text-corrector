@@ -15,8 +15,7 @@
     width: 100%;
   }
 }
-  // These are classes that change based on the chosen menu item. They are added to edit area sections
-  // Position menu sections horizontally. This position change based on choosen option from the menu. Only one section at the time is visible
+  // These are classes that are added based on the chosen menu option. They are added to div element with ".edit-area-sections" class
   .textarea {
     left: 0;
   }
